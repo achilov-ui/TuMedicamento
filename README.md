@@ -1,1 +1,152 @@
 # TuMedicamento
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TuMedicamento.com</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #cfe8ff, #e6f2ff);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        background-color: #f7faff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+        width: 350px;
+        text-align: center;
+        padding: 20px;
+    }
+    h1 {
+        color: #1a73e8;
+        margin-bottom: 10px;
+    }
+    .icon {
+        font-size: 60px;
+        margin-bottom: 10px;
+    }
+    button, a.link-btn {
+        display: block;
+        width: 90%;
+        margin: 10px auto;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: none;
+        background-color: #1a73e8;
+        color: white;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+        transition: background 0.3s;
+    }
+    button:hover, a.link-btn:hover {
+        background-color: #155bb5;
+    }
+    .content {
+        display: none;
+        margin-top: 20px;
+        text-align: left;
+    }
+    label {
+        display: block;
+        margin-top: 8px;
+        font-weight: bold;
+    }
+    input, textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+    }
+    textarea {
+        resize: none;
+        height: 100px;
+    }
+    .submit-btn {
+        margin-top: 15px;
+        background-color: #28a745;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>TuMedicamento.com</h1>
+    <div class="icon">♿</div>
+
+    <button onclick="mostrar('info')">Información e Instrucciones</button>
+    <button onclick="mostrar('registro')">Registro</button>
+    <button onclick="mostrar('archivos')">Subir Archivos</button>
+    <button onclick="mostrar('otros')">Otros (Quejas, Reclamos, Observaciones)</button>
+
+    <!-- SECCIÓN 1 -->
+    <div id="info" class="content">
+        <h3>Guía de Uso</h3>
+        <p>Bienvenido a <b>TuMedicamento.com</b> 👋  
+        Aquí puedes realizar tus trámites de manera accesible:  
+        1️⃣ En “Registro” ingresa tus datos personales.  
+        2️⃣ En “Subir Archivos”, carga tu cédula y fórmula médica.  
+        3️⃣ En “Otros”, escribe observaciones o reclamos.  
+        4️⃣ Finalmente, presiona enviar en cada sección.</p>
+
+        <a class="link-btn" href="https://tuusuario.github.io/TuMedicamento/" target="_blank">
+            🌐 Ir a versión pública
+        </a>
+    </div>
+
+    <!-- SECCIÓN 2 -->
+    <div id="registro" class="content">
+        <h3>Registro de Usuario</h3>
+        <label>Nombre:</label>
+        <input type="text" placeholder="Ingrese su nombre">
+        <label>Apellido:</label>
+        <input type="text" placeholder="Ingrese su apellido">
+        <label>Cédula:</label>
+        <input type="number" placeholder="Ingrese su número de cédula">
+        <label>Dirección:</label>
+        <input type="text" placeholder="Ingrese su dirección">
+        <label>Casa o Apartamento:</label>
+        <input type="text" placeholder="Ej: Casa 3, Apto 201">
+        <button class="submit-btn">Enviar Registro</button>
+    </div>
+
+    <!-- SECCIÓN 3 -->
+    <div id="archivos" class="content">
+        <h3>Subir Documentos</h3>
+        <label>Foto de la Cédula:</label>
+        <input type="file" accept="image/*">
+        <label>Fórmula Médica:</label>
+        <input type="file" accept="image/*, .pdf">
+        <button class="submit-btn">Enviar Archivos</button>
+    </div>
+
+    <!-- SECCIÓN 4 -->
+    <div id="otros" class="content">
+        <h3>Quejas, Reclamos u Observaciones</h3>
+        <label>Escriba su mensaje:</label>
+        <textarea placeholder="Escriba aquí su sugerencia o reclamo..."></textarea>
+        <button class="submit-btn">Enviar</button>
+    </div>
+</div>
+
+<script>
+    // Mostrar solo la sección seleccionada
+    function mostrar(id) {
+        document.querySelectorAll('.content').forEach(div => {
+            div.style.display = 'none';
+        });
+        document.getElementById(id).style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
